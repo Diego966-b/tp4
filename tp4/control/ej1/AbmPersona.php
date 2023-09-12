@@ -1,5 +1,6 @@
 <?php
-include_once("../../modelo/ej1/Persona.php");
+include_once("../../../config.php");
+include_once($MODELO_TP4."/ej1/Persona.php");
 class AbmPersona{
     
     /**

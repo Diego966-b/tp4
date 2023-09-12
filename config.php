@@ -3,7 +3,6 @@
 $PROYECTO = 'TPS/TPSMejorados'; 
 $ROOT = $_SERVER['DOCUMENT_ROOT']."/$PROYECTO/";
 
-// include_once($ROOT.'utils/funciones.php'); !!!
 
 // $VISTA = $ROOT.'vista';
 // TP1:
@@ -19,9 +18,11 @@ $VISTA_TP4 = $PROYECTO.'/tp4/vista';
 $CONTROL_TP4 = $ROOT.'/tp4/control';
 $MODELO_TP4 = $ROOT.'/tp4/modelo';
 $ACCION_TP4 = $ROOT.'/tp4/vista/accion';
-$UTILS_TP4 = $PROYECTO. '/tp4/utils';
+$UTILS_TP4 = $PROYECTO.'/tp4/utils';
 $ESTRUCTURA_TP4 = $ROOT.'/tp4/vista/estructura';
 
+// Archivo funciones: 
+include_once($ROOT.'/tp4/utils/funciones.php');
 
 /*
 // Variable que define la pagina de autenticacion del proyecto

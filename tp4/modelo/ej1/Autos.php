@@ -1,7 +1,6 @@
 <?php
 include_once("../../../config.php");
-include_once("Persona.php");
-// include_once("../../control/ej1/AbmAuto.php");
+include_once($CONTROL_TP4."/ej1/AbmPersona.php");
 class Autos
 {
     private $patente, $marca, $modelo, $objDuenio, $mensajeOperacion;  
@@ -125,7 +124,7 @@ class Autos
                     $patente = $row['Patente'];
                     $marca = $row['Marca'];
                     $modelo = $row['Modelo'];
-                    
+
                     $array['NroDni'] = $row['DniDuenio'];
                     $objPersona = $abmPersona -> buscar ($array);
 

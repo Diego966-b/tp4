@@ -22,18 +22,10 @@
             </div>
             <div class="col-9">
             <h3>Resolucion:</h3>
-                <form name="formulario" id="formulario" action="../accion/accionEj2.php" method="post">
-                    <div class="form-group">
-                        <!-- Resolucion: -->
-
-                        <br><br>
-                        <input class="btn btn-primary" id="btnEnviar" name="btnEnviar" type="submit" value="Enviar">
-                    </div>
-                </form>
+                <!-- Resolucion: -->     
             </div>
         </div>
     </div> 
     <?php include_once($ESTRUCTURA_TP4."/pie.php"); ?>
-    <script src="../js/validarEj2.js"></script>
 </body>
 </html>

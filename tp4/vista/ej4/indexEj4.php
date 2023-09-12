@@ -22,10 +22,10 @@
             </div>
             <div class="col-9">
             <h3>Resolucion:</h3>
-                <form name="formulario" id="formulario" action="../accion/accionEj4.php" method="post">
+                <form name="formulario" id="formulario" action="../accion/accionBuscarAuto.php" method="post">
                     <div class="form-group">
-                        <!-- Resolucion: -->
-
+                        <label for="patente">Patente</label>
+                        <input type="text" name="patente" id="patente" placeholder="ABC 123">
                         <br><br>
                         <input class="btn btn-primary" id="btnEnviar" name="btnEnviar" type="submit" value="Enviar">
                     </div>
