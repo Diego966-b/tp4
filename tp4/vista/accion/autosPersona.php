@@ -9,10 +9,6 @@
     include_once($MODELO_TP4."/ej1/Autos.php");
     include_once($CONTROL_TP4."/ej1/AbmAuto.php"); 
 ?>
-
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,38 +28,43 @@
             <h3>Resolucion:</h3>
                 <!-- Resolucion: -->  
                 <?php
+                    $colAutosDuenio = [];
                     $objAbmAuto = new AbmAuto ();
                     $tieneAutos = false;
                     $colDatos = devolverDatos(); 
                     $dniIngresado = $colDatos ["NroDni"]; 
                     $listaAutos = $objAbmAuto->buscar($colDatos);
-
-                    echo "<table class='border'>";
                         foreach ($listaAutos as $objAuto)
                         {
                             $objDuenio = $objAuto->getObjDuenio();
                             $objDuenio = $objDuenio[0];
                             $dniDuenio = $objDuenio->getNroDni();
+                            // echo "Estoy comparando: ".$dniIngresado." con ".$dniDuenio."<br>";
                             if ($dniDuenio == $dniIngresado)
                             {
-                                mostrarAuto ($objAuto);
-                                $tieneAutos = true; // !!!
+                                array_push($colAutosDuenio, $objAuto);
+                                $tieneAutos = true; 
                             }
                         }
-                    echo "</table>";
+                    
                     $objAbmPersona = new AbmPersona();
                     $listaPersonas = $objAbmPersona->buscar(null);
-
                     if (!$tieneAutos)
                     {
                         echo "<p>Esta persona no tiene autos registrados a su nombre</p>";
                     }
                     else
                     {
-                        echo "<p>Encontre los siguientes autos:</p>";
-
+                        echo "<p>Encontre los siguientes autos:</p>"; // !!!
+                        foreach ($colAutosDuenio as $objAutoDuenio)
+                        {
+                            echo "<table class='border'>";
+                            mostrarAuto ($objAuto);
+                            echo "</table>";
+                        }
                     }
                 ?>
+                <a href="../ej5/indexEj5.php">Volver</a>
             </div>
         </div>
     </div> 
