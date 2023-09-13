@@ -22,10 +22,18 @@
             </div>
             <div class="col-9">
             <h3>Resolucion:</h3>
-                <form name="formulario" id="formulario" action="../accion/accionEj7.php" method="post">
+                <form name="formulario" id="formulario" action="../accion/accionNuevoAuto.php" method="post">
                     <div class="form-group">
                         <!-- Resolucion: -->
-
+                        <h4>Cargar un auto</h4>
+                        <p>Ingrese la patente:</p>
+                        <input type="text" id="Patente" name="Patente">
+                        <p>Ingrese la marca:</p>
+                        <input type="text" id="Marca" name="Marca">
+                        <p>Ingrese el modelo:</p>
+                        <input type="number" id="Modelo" name="Modelo">
+                        <p>Ingrese el dni del duenio</p>
+                        <input type="number" id="DniDuenio" name="DniDuenio">
                         <br><br>
                         <input class="btn btn-primary" id="btnEnviar" name="btnEnviar" type="submit" value="Enviar">
                     </div>

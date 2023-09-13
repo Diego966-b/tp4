@@ -7,7 +7,7 @@
     include_once($CONTROL_TP4."/ej1/AbmPersona.php"); 
 
     include_once($MODELO_TP4."/ej1/Autos.php");
-    include_once($CONTROL_TP4."/ej1/AbmAuto.php"); 
+    include_once($CONTROL_TP4."/ej1/AbmAuto.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +55,7 @@
                     }
                     else
                     {
-                        echo "<p>Encontre los siguientes autos:</p>"; // !!!
+                        echo "<p>Encontre los siguientes autos:</p>";
                         foreach ($colAutosDuenio as $objAutoDuenio)
                         {
                             echo "<table class='border'>";

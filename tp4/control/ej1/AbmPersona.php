@@ -56,9 +56,10 @@ class AbmPersona{
      */
     public function alta($param){
         $resp = false;
-        $param['NroDni'] =null;
+        // $param['NroDni'] = null; No hace falta setearlo en null, no es auto increment
         $elObjtTabla = $this->cargarObjeto($param);
         // verEstructura($elObjtTabla);
+        print_r($param);
         if ($elObjtTabla!=null and $elObjtTabla->insertar()){
             $resp = true;
         }

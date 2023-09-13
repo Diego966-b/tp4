@@ -1,6 +1,8 @@
 <?php
 include_once("../../../config.php");
+include_once($MODELO_TP4."/ej1/Persona.php");
 include_once($CONTROL_TP4."/ej1/AbmPersona.php");
+include_once($CONTROL_TP4."/ej1/AbmAuto.php");
 class Autos
 {
     private $patente, $marca, $modelo, $objDuenio, $mensajeOperacion;  
@@ -60,7 +62,7 @@ class Autos
         $resp = false;
         $base=new BaseDatos();
         $sql = "INSERT INTO autos (Patente, Marca, Modelo, DniDuenio) 
-        VALUES('".$this->getPatente()."','".$this -> getMarca()."','".$this -> getModelo()."','".$this->getObjDuenio()->getNroDni()."');";
+        VALUES('".$this->getPatente()."','".$this -> getMarca()."','".$this -> getModelo()."','".$this -> getObjDuenio() -> getNroDni()."');";
         if ($base->Iniciar()) 
         {
             if ($base->Ejecutar($sql)) {

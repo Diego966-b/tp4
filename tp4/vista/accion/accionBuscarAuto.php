@@ -26,31 +26,44 @@
             </div>
             <div class="col-9">
             <h3>Resolucion:</h3>
-                <form name="formulario" id="formulario" action="../accion/accionEj4.php" method="post">
                 <div class="form-group">
                     <?php
-                        $_POST['patente'];
+                        $colDatos = devolverDatos();
+                        $patente = $colDatos["patente"];
                         $objAbmAuto = new AbmAuto();
-                        $listaAutos = $objAbmAuto->buscar($_POST['patente']);
+                        $listaAutos = $objAbmAuto->buscar($patente);
                         $encontro = false;
 
                         if(count($listaAutos)>0) {
                             foreach($listaAutos as $objAuto) {                                                            
-                                if($objAuto->getPatente() == $_POST['patente']) {
-                                    echo $objAuto->getPatente();
-                                    echo $objAuto->getMarca();
-                                    echo $objAuto->getModelo();
-                                    print_r($objAuto->getObjDuenio());
+                                if($objAuto->getPatente() == $patente) {
+                                    echo "<div class='row'>";
+                                    echo "<div class='col'>";                                   
+                                        
+                                        echo '<tr><td style="width:500px;">Patente: '.$objAuto->getPatente() .'</td> <br>';
+                                        echo '<tr><td style="width:500px;">Modelo: '.$objAuto->getMarca().'</td> <br>';
+                                        echo '<tr><td style="width:500px;">Marca: '.$objAuto->getModelo().'</td> <br>';                              
+                                 
+                                    foreach ($objAuto->getObjDuenio() as $duenio) {
+                                        //echo $duenio;
+                                        echo '<tr><td style="width:500px;">DNI: '.$duenio->getNroDni() .'</td> <br>';
+                                        echo '<tr><td style="width:500px;">Apellido: '.$duenio->getApellido() .'</td> <br>';
+                                        echo '<tr><td style="width:500px;">Nombre: '.$duenio->getNombre() .'</td> <br>';
+                                        echo '<tr><td style="width:500px;">Fecha Nacimiento: '.$duenio->getFechaNac() .'</td> <br>';
+                                        echo '<tr><td style="width:500px;">Telefono: '.$duenio->getTelefono() .'</td> <br>';
+                                        echo '<tr><td style="width:500px;">Domicilio: '.$duenio->getDomicilio() .'</td> <br>';
+                                    }
                                     $encontro = true;   
-                                }   
+                                }  
+                                echo "</div>";
+                                echo "</div>";     
                             }
                         }
-                            if(!$encontro){
-                                echo "No se encontro ningun auto con esa patente";
-                            }
+                        if(!$encontro){
+                            echo "No se encontro ningun auto con esa patente";
+                        }
                     ?>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </div> 

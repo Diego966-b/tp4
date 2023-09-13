@@ -10,12 +10,11 @@ class AbmAuto{
      */
     private function cargarObjeto ($param){
         $obj = null;
-           
         if (array_key_exists('Patente',$param) and array_key_exists('Marca',$param) and 
-            array_key_exists('Modelo',$param) and array_key_exists('DniDuenio',$param))
+            array_key_exists('Modelo',$param) and array_key_exists('objPersona',$param))
         {
             $obj = new Autos();
-            $obj -> setear($param['Patente'], $param['Marca'], $param['Modelo'], $param['DniDuenio']);
+            $obj -> setear($param['Patente'], $param['Marca'], $param['Modelo'], $param['objPersona']);
         }
         return $obj;
     }
@@ -38,7 +37,7 @@ class AbmAuto{
      */
     public function alta($param){
         $resp = false;
-        $param['Patente'] = null;
+        // $param['Patente'] = null;
         $elObjtTabla = $this->cargarObjeto($param);
         // verEstructura($elObjtTabla);
         if ($elObjtTabla!=null and $elObjtTabla->insertar()){

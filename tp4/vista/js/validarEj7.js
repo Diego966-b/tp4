@@ -1,18 +1,35 @@
+// Metodo noDecimal
 $.validator.addMethod("noDecimal", function(value, element) {
     return this.optional(element) || /^[0-9]+$/.test(value);
   }, "Ingrese un número entero sin decimales");
+  
 $(document).ready(function() {
     $("#formulario").validate({
         rules: {
-            NroDni: {
+            Patente: {
+                required: true,
+            },
+            Marca: {
+                required: true,
+            },
+            Modelo: {
+                required: true,
+            },
+            DniDuenio: {
                 required: true,
                 noDecimal: true,
-                min: 10000000,
-                max: 99999999,
-            }   
+                min: 10000000, 
+                max: 99999999, 
+            },
         },
         messages: {
-            NroDni: {
+            Patente: {
+                required: "Este campo es obligatorio",
+            },
+            Marca: {
+                required: "Este campo es obligatorio",
+            },
+            DniDuenio: {
                 required: "Este campo es obligatorio",
                 min: "El DNI debe tener como minimo 8 cifras",
                 max: "El DNI debe tener como maximo 8 cifras",
@@ -27,4 +44,5 @@ $(document).ready(function() {
         }    
     });
 });
+
 

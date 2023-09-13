@@ -22,10 +22,22 @@
             </div>
             <div class="col-9">
             <h3>Resolucion:</h3>
-                <form name="formulario" id="formulario" action="../accion/accionEj6.php" method="post">
+                <form name="formulario" id="formulario" action="../accion/accionNuevaPersona.php" method="post">
                     <div class="form-group">
                         <!-- Resolucion: -->
-
+                        <h4>Cargar una persona</h4>
+                        <p>Ingrese su nombre:</p>
+                        <input type="text" id="Nombre" name="Nombre">
+                        <p>Ingrese su apellido:</p>
+                        <input type="text" id="Apellido" name="Apellido">
+                        <p>Ingrese su numero de DNI:</p>
+                        <input type="number" id="NroDni" name="NroDni">
+                        <p>Ingrese su Fecha de nacimiento:</p>
+                        <input type="date" id="fechaNac" name="fechaNac">
+                        <p>Ingrese su domicilio:</p>
+                        <input type="text" id="Domicilio" name="Domicilio">
+                        <p>Ingrese su telefono:</p>
+                        <input type="number" id="Telefono" name="Telefono">
                         <br><br>
                         <input class="btn btn-primary" id="btnEnviar" name="btnEnviar" type="submit" value="Enviar">
                     </div>
