@@ -1,13 +1,6 @@
 <?php
     include_once("../../../config.php");
     include_once($ESTRUCTURA_TP4."/header.php");
-    include_once ($MODELO_TP4."/conector/BaseDatos.php");
-    
-    include_once($MODELO_TP4."/ej1/Persona.php");
-    include_once($CONTROL_TP4."/ej1/AbmPersona.php"); 
-
-    include_once($MODELO_TP4."/ej1/Autos.php");
-    include_once($CONTROL_TP4."/ej1/AbmAuto.php"); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,6 +33,7 @@
                             echo "<p>Error</p>";
                         }
                     ?>
+                    <a href='../ej6/indexEj6.php' class='btn btn-primary'>Volver</a>;
                 </div>
             </div>
         </div>

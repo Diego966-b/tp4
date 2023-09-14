@@ -29,16 +29,28 @@
         }
         return $colDatos;
     }
-    /**
-     * Muestra un obj autos. 
-     * Asume que lo estas llamando dentro de <table>
-     * @param Autos $objAuto
-     */
-    function mostrarAuto ($objAuto)
-    {
-        //echo "<br>";  
-        echo '<tr><td style="width:500px;">Marca: '.$objAuto->getMarca().'</td></tr>';
-        echo '<tr><td style="width:500px;">Modelo: '.$objAuto->getModelo().'</td></tr>';
-        echo '<tr><td style="width:500px;">Patente: '.$objAuto->getPatente().'</td></tr>';
-    }
+
+    spl_autoload_register(function ($class_name) {
+        //echo "class ".$class_name ;
+        $directorys = array(
+            $_SESSION['ROOT'].'tp4/modelo/',
+            $_SESSION['ROOT'].'tp4/modelo/conector/',
+            $_SESSION['ROOT'].'tp4/control/',
+          //  $GLOBALS['ROOT'].'util/class/',
+        );
+        // print_r($directorys);
+        foreach($directorys as $directory){
+            /*
+            echo "<br>";
+            echo "DIRECTORIO:".$directory."".$class_name.'.php';
+            echo "<br>";
+            */
+            if (file_exists($directory."".$class_name.'.php')){
+                // echo "se incluyo".$directory.$class_name . '.php';
+                require_once($directory."".$class_name.'.php');
+                return;
+            }
+        }
+    });
+
 ?>

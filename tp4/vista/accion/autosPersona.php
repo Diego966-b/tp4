@@ -1,13 +1,6 @@
 <?php
     include_once("../../../config.php");
     include_once($ESTRUCTURA_TP4."/header.php");
-    include_once ($MODELO_TP4."/conector/BaseDatos.php");
-    
-    include_once($MODELO_TP4."/ej1/Persona.php");
-    include_once($CONTROL_TP4."/ej1/AbmPersona.php"); 
-
-    include_once($MODELO_TP4."/ej1/Autos.php");
-    include_once($CONTROL_TP4."/ej1/AbmAuto.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +39,6 @@
                                 $tieneAutos = true; 
                             }
                         }
-                    
                     $objAbmPersona = new AbmPersona();
                     $listaPersonas = $objAbmPersona->buscar(null);
                     if (!$tieneAutos)
@@ -59,7 +51,9 @@
                         foreach ($colAutosDuenio as $objAutoDuenio)
                         {
                             echo "<table class='border'>";
-                            mostrarAuto ($objAuto);
+                                echo '<tr><td style="width:500px;">Marca: '.$objAuto->getMarca().'</td></tr>';
+                                echo '<tr><td style="width:500px;">Modelo: '.$objAuto->getModelo().'</td></tr>';
+                                echo '<tr><td style="width:500px;">Patente: '.$objAuto->getPatente().'</td></tr>';
                             echo "</table>";
                         }
                     }

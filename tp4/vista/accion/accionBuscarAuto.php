@@ -1,13 +1,7 @@
 <?php
     include_once("../../../config.php");
     include_once($ESTRUCTURA_TP4."/header.php");
-    include_once ($MODELO_TP4."/conector/BaseDatos.php");
-    
-    include_once($MODELO_TP4."/ej1/Persona.php");
-    include_once($CONTROL_TP4."/ej1/AbmPersona.php"); 
 
-    include_once($MODELO_TP4."/ej1/Autos.php");
-    include_once($CONTROL_TP4."/ej1/AbmAuto.php"); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,31 +31,29 @@
                         if(count($listaAutos)>0) {
                             foreach($listaAutos as $objAuto) {                                                            
                                 if($objAuto->getPatente() == $patente) {
-                                    echo "<div class='row'>";
-                                    echo "<div class='col'>";                                   
-                                        
-                                        echo '<tr><td style="width:500px;">Patente: '.$objAuto->getPatente() .'</td> <br>';
-                                        echo '<tr><td style="width:500px;">Modelo: '.$objAuto->getMarca().'</td> <br>';
-                                        echo '<tr><td style="width:500px;">Marca: '.$objAuto->getModelo().'</td> <br>';                              
-                                 
+                                    echo "<table class='border'>";      
+                                        echo '<tr><td style="width:500px;">----------------------------------------------------</td></tr>';             
+                                        echo '<tr><td style="width:500px;">Patente: '.$objAuto->getPatente() .'</td></tr>';
+                                        echo '<tr><td style="width:500px;">Modelo: '.$objAuto->getMarca().'</td></tr>';
+                                        echo '<tr><td style="width:500px;">Marca: '.$objAuto->getModelo().'</td></tr>'; 
                                     foreach ($objAuto->getObjDuenio() as $duenio) {
-                                        //echo $duenio;
-                                        echo '<tr><td style="width:500px;">DNI: '.$duenio->getNroDni() .'</td> <br>';
-                                        echo '<tr><td style="width:500px;">Apellido: '.$duenio->getApellido() .'</td> <br>';
-                                        echo '<tr><td style="width:500px;">Nombre: '.$duenio->getNombre() .'</td> <br>';
-                                        echo '<tr><td style="width:500px;">Fecha Nacimiento: '.$duenio->getFechaNac() .'</td> <br>';
-                                        echo '<tr><td style="width:500px;">Telefono: '.$duenio->getTelefono() .'</td> <br>';
-                                        echo '<tr><td style="width:500px;">Domicilio: '.$duenio->getDomicilio() .'</td> <br>';
+                                        echo '<tr><td style="width:500px;">DNI: '.$duenio->getNroDni() .'</td></tr>';
+                                        echo '<tr><td style="width:500px;">Apellido: '.$duenio->getApellido() .'</td></tr>';
+                                        echo '<tr><td style="width:500px;">Nombre: '.$duenio->getNombre() .'</td></tr>';
+                                        echo '<tr><td style="width:500px;">Fecha Nacimiento: '.$duenio->getFechaNac() .'</td></tr>';
+                                        echo '<tr><td style="width:500px;">Telefono: '.$duenio->getTelefono() .'</td></tr>';
+                                        echo '<tr><td style="width:500px;">Domicilio: '.$duenio->getDomicilio() .'</td></tr>';
+                                        echo '<tr><td style="width:500px;">----------------------------------------------------</td></tr>';
+                                    echo "</table>"; 
                                     }
                                     $encontro = true;   
-                                }  
-                                echo "</div>";
-                                echo "</div>";     
+                                }      
                             }
                         }
                         if(!$encontro){
-                            echo "No se encontro ningun auto con esa patente";
+                            echo "<p>No se encontro ningun auto con esa patente</p>";
                         }
+                        echo "<a href='../ej4/indexEj4.php' class='btn btn-primary'>Volver</a>";
                     ?>
                 </div>
             </div>

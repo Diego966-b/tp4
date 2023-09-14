@@ -1,12 +1,6 @@
 <?php
     include_once("../../../config.php");
     include_once($ESTRUCTURA_TP4."/header.php");
-    include_once($MODELO_TP4."/conector/BaseDatos.php");
-    include_once($MODELO_TP4."/ej1/Persona.php");
-    include_once($CONTROL_TP4."/ej1/AbmPersona.php"); 
-    include_once($MODELO_TP4."/ej1/Autos.php");
-    include_once($CONTROL_TP4."/ej1/AbmAuto.php"); 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,17 +25,14 @@
                         $listaPersonas = $objAbmPersona->buscar(null);
                         if(count($listaPersonas) > 0){
                             foreach ($listaPersonas as $objPersona) { 
-                                echo "<div class='row'>";
-                                    echo "<div class='col'>";
-                                        echo '<tr><td style="width:500px;">DNI:'.$objPersona->getNroDni().'</td></tr>';
-                                        echo '<tr><td style="width:500px;">Nombre: '.$objPersona->getNombre().'</td></tr>';
-                                        echo '<tr><td style="width:500px;">Apellido: '.$objPersona->getApellido().'</td></tr>';
-                                        echo '<tr><td style="width:500px;">Fecha Nacimiento: '.$objPersona->getFechaNac().'</td></tr>';
-                                        echo '<tr><td style="width:500px;">Telefono: '.$objPersona->getTelefono().'</td></tr>';
-                                        echo '<tr><td style="width:500px;">Domicilio: '.$objPersona->getDomicilio().'</td></tr>';
-                                        echo '<tr><td style="width:500px;">----------------------------------------------------</td></tr>';
-                                    echo "</div>";
-                                echo "</div>";
+                                echo "<table class='border'>";
+                                    echo '<tr><td style="width:500px;">DNI:'.$objPersona->getNroDni().'</td></tr>';
+                                    echo '<tr><td style="width:500px;">Nombre: '.$objPersona->getNombre().'</td></tr>';
+                                    echo '<tr><td style="width:500px;">Apellido: '.$objPersona->getApellido().'</td></tr>';
+                                    echo '<tr><td style="width:500px;">Fecha Nacimiento: '.$objPersona->getFechaNac().'</td></tr>';
+                                    echo '<tr><td style="width:500px;">Telefono: '.$objPersona->getTelefono().'</td></tr>';
+                                    echo '<tr><td style="width:500px;">Domicilio: '.$objPersona->getDomicilio().'</td></tr>';
+                                echo "</table>";
                             }
                         }
                     ?>

@@ -144,13 +144,13 @@ class BaseDatos extends PDO {
     * 
     */
    private function EjecutarDeleteUpdate($sql){
-       $cantFilas =-1;
-       $resultado=parent::query($sql);
-       if(!$resultado){
-           $this->analizarDebug();
-       }else{
-           $cantFilas =  $resultado->rowCount();
-           
+        // echo "CONSULTA:".$sql;
+        $cantFilas =-1;
+        $resultado=parent::query($sql);
+        if(!$resultado){
+            $this->analizarDebug();
+        }else{
+            $cantFilas =  $resultado->rowCount();    
        }
        return $cantFilas;
        

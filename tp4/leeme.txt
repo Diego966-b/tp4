@@ -1,0 +1,2 @@
+Hola, nosotros cambiamos el sql que nos dieron en clase, en vez de usar la tabla "auto" usamos "autos".
+copien y pegen el sql en la carpeta sql para que funcione sin errores.

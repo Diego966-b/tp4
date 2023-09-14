@@ -1,13 +1,6 @@
 <?php
     include_once("../../../config.php");
     include_once($ESTRUCTURA_TP4."/header.php");
-    include_once ($MODELO_TP4."/conector/BaseDatos.php");
-    
-    include_once($MODELO_TP4."/ej1/Persona.php");
-    include_once($CONTROL_TP4."/ej1/AbmPersona.php"); 
-
-    include_once($MODELO_TP4."/ej1/Autos.php");
-    include_once($CONTROL_TP4."/ej1/AbmAuto.php"); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +24,6 @@
                         $objAbmAuto = new AbmAuto ();
                         $objAbmPersona = new AbmPersona ();
                         $arrayPersona = [];
-                        
                         $colDatos = devolverDatos ();
                         $arrayPersona ["NroDni"] = $colDatos ["DniDuenio"];
                         $listaPersonas = $objAbmPersona -> buscar ($arrayPersona);
@@ -43,15 +35,16 @@
                             $marca = $colDatos["Marca"];
                             $modelo = $colDatos["Modelo"];
                             $arrayAuto = ["Patente" => $patente, "Marca" => $marca, "Modelo" => $modelo, "objPersona" => $objPersona];
-
                             $resp = $objAbmAuto -> alta ($arrayAuto);
                             if ($resp)
                             {
                                 echo "<p>Se cargo el auto con exito</p>";
+                                echo "<a href='../ej7/indexEj7.php' class='btn btn-primary'>Volver</a>;";
                             }
                             else
                             {
                                 echo "<p>Error al cargar el auto</p>";
+                                echo "<a href='../ej7/indexEj7.php' class='btn btn-primary'>Volver</a>;";
                             }
                         }
                         else
