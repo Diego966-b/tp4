@@ -1,7 +1,7 @@
 <?php header('Content-Type: text/html; charset=utf-8');
 header ("Cache-Control: no-cache, must-revalidate ");
 
-$PROYECTO = 'TPS/TPSMejorados'; 
+$PROYECTO = ''; // URL DE TU PROYECTO
 //variable que almacena el directorio del proyecto
 $ROOT =$_SERVER['DOCUMENT_ROOT']."/$PROYECTO/";
 
